@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <style>
+        html {
+            margin: 0;
+          }
+          
+          span {
+            display: block;
+          }
+          .canvas {
+            left: 10px;
+            width: 100%;
+            text-align: end;
+          }
+          
+          .button {
+            width: 10px;
+            height: 10px;
+            border: solid rgb(0, 20, 0) 2px;
+            display: inline-flex;
+          }
+          
+          #white {
+            background: white;
+          }
+          
+          #black {
+            background: black;
+          }
+          #blue {
+            background: rgb(62, 62, 193);
+          }
+          #green {
+            background: rgb(19, 213, 23);
+          }
+          
+    </style>
+
+
+    <div class="canvas">
+        <h5>Dark / light mode</h5>
+        <span class="button" id="white"></span>
+        <span class="button" id="black"></span>
+        <!-- <span class="button" id="blue"></span>
+        <span class="button" id="green"></span> -->
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('.button');
+    const body    = document.querySelector('body');
+
+    buttons.forEach(function(button){
+        button.addEventListener('click', function(e){
+            if(e.target.id === 'white'){
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'black';
+            }
+            if(e.target.id === 'black'){
+                body.style.backgroundColor = e.target.id;
+                body.style.color = 'white';
+            }
+          /*  if(e.target.id === 'blue'){
+                body.style.backgroundColor = 'rgb(62, 62, 193)';
+            }
+            if(e.target.id === 'green'){
+                body.style.backgroundColor = e.target.id;
+            }*/
+        });
+    })
+</script>
+</html>
